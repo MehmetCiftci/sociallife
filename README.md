@@ -9,7 +9,8 @@ share post,
 search people,
 edit profile,
 look profiles,
-logout.
+logout,
+delete account.
 
 To do list:
 change password,
