@@ -12,7 +12,6 @@ look profiles,
 logout.
 
 To do list:
-remove account,
 change password,
 admin delete posts,
 make pretty interface.
