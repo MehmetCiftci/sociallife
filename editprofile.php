@@ -125,7 +125,7 @@ if(isset($_POST) & !empty($_POST)){
 </form>
 
 
-
+<a href="deleteaccount.php">DELETE MY ACCOUNT</a>
 
 </body>
 </html>
