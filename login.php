@@ -3,7 +3,7 @@ session_start();
 require_once('connect.php');
 
 if(isset($_SESSION['id'])){
-	echo "User already logged in. Try <a href='logout.php'>logging out</a>.<br>";
+	echo "<h1>User already logged in. Try <a href='logout.php'>logging out</a>.<br></h1>";
 }
 
 
@@ -37,13 +37,17 @@ if(isset($_POST) & !empty($_POST)){
 <div class="login">
 <form method="POST">
 	<h1>Please Login</h1>
-	
-				<input type="email" placeholder="Email" name="inputMail" required>
-				<input type="password" placeholder="Password" name="inputPassword"  required>
-				<button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
-	<a href="register.php">Register</a>
-	
+
+		<input type="email" placeholder="Email" name="inputMail" required>
+		<input type="password" placeholder="Password" name="inputPassword"  required>
+		<button type="submit" class="btn btn-primary btn-block btn-large" >Login</button>
+
+
 </form>
+<form action="register.php">
+    <button type="submit" class="btn btn-primary btn-block btn-large" >Register </button>
+</form>
+	
 </div>
 
 </body>

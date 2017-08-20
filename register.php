@@ -23,65 +23,36 @@ if(isset($_POST) & !empty($_POST)){
 <html>
 <head>
 <title>Social Life</title>
+  <link rel="stylesheet" href="css/loginstyle.css">
 </head>
 <body>
+<div class="login">
 
 <form method="POST">
-	<h2>Please Register</h2>
-	<table>
-		<tr>
-			<td>
-				Name
-			</td>
-			<td>
-				<input type="text" name="inputName" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Surname
-			</td>
-			<td>
-				<input type="text" name="inputSurname" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				TC No
-			</td>
-			<td>
-				<input type="text" name="inputTcno" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Email
-			</td>
-			<td>
-				<input type="email" name="inputMail" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Password
-			</td>
-			<td>
-				<input type="password" name="inputPassword" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			</td>
-			<td align="right">
-				<button type="submit">Register</button>
-			</td>
-		</tr>	
-	</table>
-	<a href="login.php">Login</a>
+	<h1>Please Register</h1>
+
+				<input type="text" name="inputName" placeholder="Name" required>
+
+				<input type="text" name="inputSurname" placeholder="Surname" required>
+
+				<input type="text" name="inputTcno" placeholder="TC No" required>
+
+				<input type="email" name="inputMail" placeholder="Email" required>
+
+				<input type="password" name="inputPassword" placeholder="Password" required>
+
+				<button type="submit" class="btn btn-primary btn-block btn-large">Register</button>
+
 	
 </form>
 
 
+
+<form action="login.php">
+    <button type="submit" class="btn btn-primary btn-block btn-large" >Login </button>
+</form>
+
+</div>
 
 </body>
 </html>
