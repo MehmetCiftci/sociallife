@@ -42,6 +42,12 @@ if(isset($_POST) & !empty($_POST)){
 <body>
 
 <div class="topnav" id="myTopnav">
+  <a>
+  <?php 
+  echo $_SESSION['loggedName'];
+  ?>
+  	
+  </a>
   <a href="feed.php">My Feed</a>
   <a href="profile.php">Profile</a>
   <a class="active" href="editprofile.php">Edit Profile</a>

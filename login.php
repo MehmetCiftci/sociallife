@@ -15,9 +15,11 @@ if(isset($_POST) & !empty($_POST)){
 	$result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$count = mysqli_num_rows($result);
 	$resultid=mysqli_fetch_assoc($result);
+
 	if($count == 1) {
 		$_SESSION['id'] = $resultid['id'];
 		$_SESSION['loggedIn'] = true;
+		$_SESSION['loggedName'] = $resultid['name'] . ' ' . $resultid['surname'];
 		echo "Login successful<br>";
 
     	header('location: feed.php');  

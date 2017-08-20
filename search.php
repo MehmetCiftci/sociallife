@@ -26,6 +26,12 @@ require_once('connect.php');
 
 
 <div class="topnav" id="myTopnav">
+  <a>
+  <?php 
+  echo $_SESSION['loggedName'];
+  ?>
+  	
+  </a>
   <a href="feed.php">My Feed</a>
   <a href="profile.php">Profile</a>
   <a href="editprofile.php">Edit Profile</a>
