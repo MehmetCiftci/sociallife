@@ -42,7 +42,7 @@ if(isset($_POST) & !empty($_POST)){
 
 <div class="topnav" id="myTopnav">
   <a href="feed.php">My Feed</a>
-  <a href="profile.php">My Profile</a>
+  <a href="profile.php">Profile</a>
   <a class="active" href="editprofile.php">Edit Profile</a>
   <a href="search.php">Search</a>
   <a href="logout.php">Logout</a>
