@@ -32,7 +32,7 @@ if(isset($_POST) & !empty($_POST)){
 <title>Social Life</title>
 </head>
 <body>
- <div class="login">
+
 <form method="POST">
 	<h2>Please Login</h2>
 	<table>
@@ -62,7 +62,6 @@ if(isset($_POST) & !empty($_POST)){
 	<a href="register.php">Register</a>
 	
 </form>
-/<div>
 
 
 
