@@ -133,8 +133,20 @@ if(isset($_POST) & !empty($_POST)){
 			<td>
 				<select name="inputSex">
    					<option value="-">Select Sex</option>
-   					<option value="male">Male</option>
-   					<option value="female">Female</option>
+					<?php
+						if ($curSex == 'male') {
+						echo "<option value='male' selected='selected'>Male</option>";
+					}else{
+						echo "<option value='male'>Male</option>";
+					}
+						if ($curSex == 'female') {
+						echo "<option value='female' selected='selected'>Female</option>";
+					}else{
+						echo "<option value='female'>Female</option>";
+					}
+
+
+			?>
 				</select>
 			</td>
 		</tr>
