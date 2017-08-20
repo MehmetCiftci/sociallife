@@ -40,8 +40,16 @@ if(isset($_POST) & !empty($_POST)){
 <html>
 <head>
 <title>Social Life</title>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
+	<div class="topnav" id="myTopnav">
+  <a href="feed.php">My Feed</a>
+  <a href="profile.php">Profile</a>
+  <a href="editprofile.php">Edit Profile</a>
+  <a href="search.php">Search</a>
+  <a href="logout.php">Logout</a>
+</div>
 
 <form method="POST">
 	<h2>Delete Account</h2>
