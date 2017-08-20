@@ -34,11 +34,7 @@ if(isset($_POST) & !empty($_POST)){
 
 </head>
 <body>
-<<<<<<< HEAD
-
-=======
 <div class="login">
->>>>>>> origin/master
 <form method="POST">
 	<h1>Please Login</h1>
 	
@@ -48,12 +44,7 @@ if(isset($_POST) & !empty($_POST)){
 	<a href="register.php">Register</a>
 	
 </form>
-<<<<<<< HEAD
-
-=======
 </div>
->>>>>>> origin/master
-
 
 </body>
 </html>
