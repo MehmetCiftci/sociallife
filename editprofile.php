@@ -37,6 +37,7 @@ if(isset($_POST) & !empty($_POST)){
 <head>
 <title>Social Life</title>
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link rel="stylesheet" href="css/loginstyle.css">
 </head>
 <body>
 
@@ -48,8 +49,9 @@ if(isset($_POST) & !empty($_POST)){
   <a href="logout.php">Logout</a>
 </div>
 
+<div class="login">
 <form method="POST">
-	<h2>Edit Profile</h2>
+	<h1>Edit Profile</h1>
 	<?php //get current values for input boxes
 	$profileId = $_SESSION['id'];
 	$sql = "SELECT * FROM user WHERE id = '$profileId'";
@@ -68,7 +70,9 @@ if(isset($_POST) & !empty($_POST)){
 	<table>
 		<tr>
 			<td>
+				<font color="white">
 				Name*
+				</font>
 			</td>
 			<td>
 				<input type="text" name="inputName" value = "<?php echo $curName ?>" required>
@@ -76,7 +80,9 @@ if(isset($_POST) & !empty($_POST)){
 		</tr>
 		<tr>
 			<td>
+				<font color="white">
 				Surname*
+				</font>
 			</td>
 			<td>
 				<input type="text" name="inputSurName" value = "<?php echo $curSurName ?>" required>
@@ -84,7 +90,9 @@ if(isset($_POST) & !empty($_POST)){
 		</tr>
 		<tr>
 			<td>
+				<font color="white">
 				Tel
+				</font>
 			</td>
 			<td>
 				<input type="text" name="inputTel" value = "<?php echo $curTel ?>" >
@@ -92,7 +100,9 @@ if(isset($_POST) & !empty($_POST)){
 		</tr>
 		<tr>
 			<td>
+				<font color="white">
 				Mail*
+				</font>
 			</td>
 			<td>
 				<input type="text" name="inputMail" value = "<?php echo $curMail ?>" required>
@@ -100,7 +110,9 @@ if(isset($_POST) & !empty($_POST)){
 		</tr>
 		<tr>
 			<td>
+				<font color="white">
 				Birthday
+				</font>
 			</td>
 			<td>
 				<input type="date" name="inputBirthday" value = "<?php echo $curBirthday ?>" >
@@ -108,15 +120,23 @@ if(isset($_POST) & !empty($_POST)){
 		</tr>
 		<tr>
 			<td>
+				<font color="white">
 				Sex
+				</font>
 			</td>
 			<td>
-				<input type="text" name="inputSex" value = "<?php echo $curSex ?>" >
+				<select name="inputSex">
+   					<option value="-">Select Sex</option>
+   					<option value="male">Male</option>
+   					<option value="female">Female</option>
+				</select>
 			</td>
 		</tr>
 		<tr>
 			<td>
+				<font color="white">
 				Hobbies
+				</font>
 			</td>
 			<td>
 				<input type="text" name="inputHobbies" value = "<?php echo $curHobbies ?>" >
@@ -126,15 +146,17 @@ if(isset($_POST) & !empty($_POST)){
 			<td>
 			</td>
 			<td align="right">
-				<button type="submit">Edit</button>
+				<button type="submit" class="btn btn-primary btn-block btn-large" >Edit</button>
 			</td>
 		</tr>	
 	</table>
 	
 </form>
+<form action="deleteaccount.php">
+    <button type="submit" class="btn btn-primary btn-block btn-large btn-red" >DELETE MY ACCOUNT</button>
+</form>
+</div>
 
-
-<a href="deleteaccount.php">DELETE MY ACCOUNT</a>
 
 </body>
 </html>
