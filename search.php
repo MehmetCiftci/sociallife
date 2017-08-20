@@ -20,6 +20,7 @@ require_once('connect.php');
 <head>
 <title>Social Life</title>
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link rel="stylesheet" href="css/loginstyle.css">
 </head>
 <body>
 
@@ -32,25 +33,17 @@ require_once('connect.php');
   <a href="logout.php">Logout</a>
 </div>
 
-
+<div class="login">
 <form method="POST">
-	<h3>Search people</h3>
-	<table>
-		<tr>
-			<td>
+	<h1>Search people</h1>
 				<input type="text" name="inputName" required>
-			</td>
-		<tr>
-			<td>
-			</td>
 			<td align="right">
-				<button type="submit">Search</button>
-			</td>
-		</tr>	
-	</table>
+				<button type="submit" class="btn btn-primary btn-block btn-large">Search</button>
+			
+
 	
 </form>
-
+</div>
 
 
 <table>
