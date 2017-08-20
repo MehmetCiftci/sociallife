@@ -18,7 +18,8 @@ if(isset($_POST) & !empty($_POST)){
 	if($count == 1) {
 		$_SESSION['id'] = $resultid['id'];
 		$_SESSION['loggedIn'] = true;
-		echo "Login successful";
+		echo "Login successful<br>";
+		echo "Go to <a href='feed.php'>my feed</a>";
 	}else{
 		echo "Invalid mail or password";
 	}

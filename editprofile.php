@@ -94,7 +94,7 @@ if(isset($_POST) & !empty($_POST)){
 				Birthday
 			</td>
 			<td>
-				<input type="text" name="inputBirthday" value = "<?php echo $curBirthday ?>" >
+				<input type="date" name="inputBirthday" value = "<?php echo $curBirthday ?>" >
 			</td>
 		</tr>
 		<tr>
