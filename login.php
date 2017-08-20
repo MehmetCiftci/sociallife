@@ -30,40 +30,21 @@ if(isset($_POST) & !empty($_POST)){
 <html>
 <head>
 <title>Social Life</title>
+  <link rel="stylesheet" href="css/loginstyle.css">
+
 </head>
 <body>
- <div class="login">
+<div class="login">
 <form method="POST">
-	<h2>Please Login</h2>
-	<table>
-			<td>
-				Email
-			</td>
-			<td>
-				<input type="email" name="inputMail" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Password
-			</td>
-			<td>
-				<input type="password" name="inputPassword"  required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			</td>
-			<td align="right">
-				<button type="submit">Login</button>
-			</td>
-		</tr>	
-	</table>
+	<h1>Please Login</h1>
+	
+				<input type="email" placeholder="Email" name="inputMail" required>
+				<input type="password" placeholder="Password" name="inputPassword"  required>
+				<button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
 	<a href="register.php">Register</a>
 	
 </form>
-/<div>
-
+</div>
 
 
 </body>
