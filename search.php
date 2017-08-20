@@ -19,8 +19,19 @@ require_once('connect.php');
 <html>
 <head>
 <title>Social Life</title>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="feed.php">My Feed</a>
+  <a href="profile.php">My Profile</a>
+  <a href="editprofile.php">Edit Profile</a>
+  <a class="active" href="search.php">Search</a>
+  <a href="logout.php">Logout</a>
+</div>
+
 
 <form method="POST">
 	<h3>Search people</h3>
