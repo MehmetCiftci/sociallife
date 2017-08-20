@@ -49,8 +49,52 @@ if(isset($_POST) & !empty($_POST)){
   <a href="search.php">Search</a>
   <a href="logout.php">Logout</a>
 </div>
+<table style='table-layout:fixed'>
+ <col width=500>
+  <col width=1000>
+<tr>
+<td>
+
+<?php 
+if(isset($_GET['id'])) {
+		$getId = mysqli_real_escape_string($connection, $_GET['id']);
+	}
+	if(!isset($getId) || $_SESSION['id'] == $getId) { //if its your profile
+		$profileId = $_SESSION['id']; //set profileId to show content
+		}else{//if its other people's profile
+		$profileId = $getId;
+	}
+
+$sql = "SELECT * FROM user WHERE id = '$profileId'";
+	$result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+	
+	while($row=mysqli_fetch_assoc($result)){// show posts
+		echo "<img src='images/avatar.jpg'><br>";
+		echo "Name: ";
+		echo $row["name"];
+		echo "<br>";
+		echo "Surame: ";
+		echo $row["surname"];
+		echo "<br>";
+		echo "Tel: ";
+		echo $row["tel"];
+		echo "<br>";
+		echo "Mail: ";
+		echo $row["mail"];
+		echo "<br>";
+		echo "Sex: ";
+		echo $row["sex"];
+		echo "<br>";
+		echo "Hobbies: ";
+		echo $row["hobbies"];
+		echo "<br>";
 
 
+
+	}
+?>
+</td>
+<td>
 <?php
 	if(isset($_GET['id'])) {
 		$getId = mysqli_real_escape_string($connection, $_GET['id']);
@@ -97,6 +141,8 @@ if(isset($_POST) & !empty($_POST)){
 
 
 ?>
-
+</td>
+</tr>
+</table>
 </body>
 </html>
