@@ -33,11 +33,18 @@ if(isset($_POST) & !empty($_POST)){
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <title>Social Life</title>
+ 
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <link rel="stylesheet" href="css/loginstyle.css">
+<!-- Bootstrap CSS
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
 </head>
 <body>
 
@@ -56,6 +63,7 @@ if(isset($_POST) & !empty($_POST)){
 </div>
 
 <div class="login">
+<table>		
 <form method="POST">
 	<h1>Edit Profile</h1>
 	<?php //get current values for input boxes
@@ -73,7 +81,6 @@ if(isset($_POST) & !empty($_POST)){
 	
 	
 	?>
-	<table>
 		<tr>
 			<td>
 				<font color="white">
@@ -131,23 +138,21 @@ if(isset($_POST) & !empty($_POST)){
 				</font>
 			</td>
 			<td>
-				<select name="inputSex">
-   					<option value="-">Select Sex</option>
-					<?php
+				<div class="dropdown dropdown-dark">
+				<select name="inputSex" class="dropdown-select">
+   					<option value="">Select Sex</option>
+   					<option value='male'<?php
 						if ($curSex == 'male') {
-						echo "<option value='male' selected='selected'>Male</option>";
-					}else{
-						echo "<option value='male'>Male</option>";
-					}
+						echo "selected='selected'";}?>
+						>Male</option>
+					<option value='female' 
+					<?php 
 						if ($curSex == 'female') {
-						echo "<option value='female' selected='selected'>Female</option>";
-					}else{
-						echo "<option value='female'>Female</option>";
-					}
-
-
-			?>
+						echo "selected='selected'";
+					}?>
+					>Female</option>
 				</select>
+				</div>
 			</td>
 		</tr>
 		<tr>
@@ -167,11 +172,16 @@ if(isset($_POST) & !empty($_POST)){
 				<button type="submit" class="btn btn-primary btn-block btn-large" >Edit</button>
 			</td>
 		</tr>	
-	</table>
-	
 </form>
+
+<tr>
+
+
+</tr>
+</table>
+	
 <form action="deleteaccount.php">
-    <button type="submit" class="btn btn-primary btn-block btn-large btn-red" >DELETE MY ACCOUNT</button>
+    <button type="submit" class="btn btn-block btn-large btn-red" >DELETE MY ACCOUNT</button>
 </form>
 </div>
 

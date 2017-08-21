@@ -29,9 +29,12 @@ if(isset($_POST) & !empty($_POST)){
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Social Life</title>
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
@@ -49,12 +52,8 @@ if(isset($_POST) & !empty($_POST)){
   <a href="search.php">Search</a>
   <a href="logout.php">Logout</a>
 </div>
-<table style='table-layout:fixed'>
- <col width=500>
-  <col width=1000>
-<tr>
-<td>
-
+<div class="row">
+<div class="col-sm-4">
 <?php 
 if(isset($_GET['id'])) {
 		$getId = mysqli_real_escape_string($connection, $_GET['id']);
@@ -93,8 +92,10 @@ $sql = "SELECT * FROM user WHERE id = '$profileId'";
 
 	}
 ?>
-</td>
-<td>
+	
+</div>
+
+<div class="col-sm-8">
 <?php
 	if(isset($_GET['id'])) {
 		$getId = mysqli_real_escape_string($connection, $_GET['id']);
@@ -141,8 +142,8 @@ $sql = "SELECT * FROM user WHERE id = '$profileId'";
 
 
 ?>
-</td>
-</tr>
-</table>
+</div>
+</div>
+
 </body>
 </html>
