@@ -22,7 +22,7 @@ if(isset($_POST) & !empty($_POST)){
 		$_SESSION['loggedName'] = $resultid['name'] . ' ' . $resultid['surname'];
 		echo "Login successful<br>";
 
-    	echo " <meta http-equiv='refresh' content='0;URL=feed.php'> ";  
+    	echo " <meta http-equiv='refresh' content='0;URL=api.php'> ";  
 
 	}else{
 		echo "Invalid mail or password";
@@ -41,16 +41,12 @@ if(isset($_POST) & !empty($_POST)){
 <form method="POST">
 	<h1>Please Login</h1>
 
-		<input type="email" placeholder="Email" name="inputMail" required>
-		<input type="password" placeholder="Password" name="inputPassword"  required>
+		<input type="tc" placeholder="tc" name="inputtc" required>
+		
 		<button type="submit" class="btn btn-primary btn-block btn-large" >Login</button>
 
 
 </form>
-<form action="register.php">
-    <button type="submit" class="btn btn-primary btn-block btn-large" >Register </button>
-</form>
-	
 </div>
 
 </body>

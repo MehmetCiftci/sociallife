@@ -31,6 +31,7 @@ if(isset($_POST) & !empty($_POST)){
 <head>
 <title>Social Life</title>
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link rel="stylesheet" href="css/loginstyle.css">
 </head>
 <body>
 
@@ -50,7 +51,8 @@ if(isset($_POST) & !empty($_POST)){
 
 
 
-<table>
+<font color="red">
+<table >
 <?php
 	$profileId = $_SESSION['id'];
 	$sql = "SELECT post.body, post.created_at, user.name, user.surname FROM post INNER JOIN user ON post.user_id = user.id ORDER BY post.created_at DESC";
@@ -74,6 +76,6 @@ if(isset($_POST) & !empty($_POST)){
 
 ?>
 </table>
-
+</font>
 </body>
 </html>
