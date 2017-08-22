@@ -15,7 +15,7 @@ require_once('connect.php');
 <body>
 <div class="login">
 <form method="POST" action="api.php">
-	<h1>Please Login</h1>
+	<h1>Enter Api and TC</h1>
 
 		<input type="tc" placeholder="api" name="inputApi" required>
 		<input type="tc" placeholder="tc" name="inputTC" required>
