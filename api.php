@@ -4,21 +4,59 @@
 require_once('connect.php');
 
 
-	$tc_no = "45253442504";
+if(isset($_POST) & !empty($_POST)){
+	$api = mysqli_real_escape_string($connection, $_POST['inputApi']);
+	$tc = mysqli_real_escape_string($connection, $_POST['inputTC']);
+	
+	if ($api == "1122334455MA"){
+
+	$sql = "SELECT * FROM user WHERE tcno = '$tc'";
+	$results = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+	$count = mysqli_num_rows($results);
+	$result=mysqli_fetch_assoc($results);
+
+	//show result
+	if($count == 0) {
+	if (!isset($jsonResult)) $jsonResult = new stdClass();
+		$jsonResult->sonuc = -2;
+		$jsonResult->mesaj = "kişi bulunamadı";
+
+	}	
+	if($count == 1) {
+	if (!isset($jsonResult)) $jsonResult = new stdClass();
+		$jsonResult->sonuc = 1;
+		$jsonResult->isim = $result['name'] . " " . $result['surname'];
+		$jsonResult->hobiler = $result['hobbies'];
+		$age = date_diff(date_create($result['birthday']), date_create('now'))->y;
+		$jsonResult->yas = $age;
+		$jsonResult->cinsiyet = $result['sex'];
+
+	}
+
+	}
+	else{//wrong api
+
+		if (!isset($jsonResult)) $jsonResult = new stdClass();
+		$jsonResult->sonuc = -1;
+		$jsonResult->mesaj = "yanlış api key";
+	}
 
 
-	echo $tc_no;
 
-	$sql = "SELECT name, surname, hobbies, birthday, sex FROM user WHERE (tcno like '$tc_no')";
-
-	$result = $connection->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "name: " . $row["name"]. " - surname: " . $row["surname"]. " hobbies:" . $row["hobbies"]. " birthday:" . $row["birthday"]. " sex:" . $row["sex"]. "<br>";
-    }
-} else {
-    echo "0 results";
 }
+
+	if (!isset($jsonResult)) {
+		$jsonResult = new stdClass();
+
+		$jsonResult->sonuc = -3;
+		$jsonResult->mesaj = "beklenmeyen hata";
+
+	}
+
+header('Content-Type: application/json');
+
+	$Json = json_encode($jsonResult);
+	echo $Json;
+
 $connection->close();
+?>
