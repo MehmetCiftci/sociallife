@@ -10,7 +10,8 @@ search people,
 edit profile,
 look profiles,
 logout,
-delete account.
+delete account,
+api stuff.
 
 To do list:
 change password,
